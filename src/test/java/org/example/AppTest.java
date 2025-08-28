@@ -124,4 +124,15 @@ public class AppTest
         assertFalse(App.isValid(null));
     }
 
+    @Test
+    public void Should_Contain_SpecialChar() {
+        String allowed = "!@#$%^&*()-_+=?.,;:";
+
+        assertTrue(App.containsSpecialChar("abc!", allowed));
+        assertTrue(App.containsSpecialChar("Password123@", allowed));
+        assertFalse(App.containsSpecialChar("HelloWorld123", allowed));
+        assertFalse(App.containsSpecialChar(null, allowed));
+        assertFalse(App.containsSpecialChar("abc", null));
+    }
+
 }

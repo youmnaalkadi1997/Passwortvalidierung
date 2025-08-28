@@ -73,4 +73,15 @@ public class App
                 && containsUpperAndLower(password)
                 && !isCommonPassword(password);
     }
+
+    public static boolean containsSpecialChar(String password, String allowedSpecials) {
+        if (password == null || allowedSpecials == null) return false;
+
+        for (char c : password.toCharArray()) {
+            if (allowedSpecials.indexOf(c) >= 0) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
